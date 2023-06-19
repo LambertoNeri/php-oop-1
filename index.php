@@ -7,6 +7,9 @@ class Movie {
 
 
     public static int $counter = 0;
+    public static function salutami($movie) {
+		return ('Ciao amico' . ' ' );
+	}
 
     public function __construct(string $title, string $duration, string $type)
     {
@@ -20,12 +23,12 @@ class Movie {
 $movies = [
     new Movie(
         'Terminator', 
-        '120:00', 
+        '120min', 
         'Action'
     ),
     new Movie(
         'Titanic', 
-        '140:00', 
+        '140min', 
         'Love Story'
     ),
 ];
@@ -43,7 +46,7 @@ $movies = [
     <div class="container">
         <ul><?php
 			foreach ($movies as $movie) { ?>
-				<li><?= $movie->title ?> - <?= $movie->duration ?> - <?= $movie->type ?></li><?php
+				<li><?= $movie->title ?> - <?= $movie->duration ?> - <?= $movie->type ?> - <?= $movie->salutami($movie) ?></li><?php
 			} ?>
         </ul>
     </div>
